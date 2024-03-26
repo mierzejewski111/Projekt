@@ -1,9 +1,8 @@
-import { useRef,useState } from "react";
+import { useRef, useState } from "react";
 import { linkedin, music } from "../assets";
 
 const Stats = () => {
-  
-const titleRef = useRef(null)
+  const titleRef = useRef(null);
 
   const [tasks, setTasks] = useState([]);
 
@@ -28,6 +27,12 @@ const titleRef = useRef(null)
     }
     setTasks(newTasks);
   };
+
+  const handleDeleteALL = () => {
+    const newTasks = [...tasks];
+    newTasks.length = 0;
+    setTasks(newTasks);
+  };
   return (
     <>
       <div className="text-white">
@@ -38,8 +43,13 @@ const titleRef = useRef(null)
           onChange={(e) => setNewOne(e.target.value)}
         />
         <button onClick={newOne !== "" ? handleAdd : null}>ADD</button>
-      </div>
-
+        {tasks.length !== 0 ? (
+          <button className="ml-3" onClick={handleDeleteALL}>
+            X(all)
+          </button>
+        ) : null}
+      </div>{" "}
+      :
       {tasks.length === 0 ? (
         <div className="text-white">Empty List</div>
       ) : (
