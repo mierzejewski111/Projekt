@@ -1,25 +1,11 @@
-import { useState } from "react";
+import { useRef,useState } from "react";
 import { linkedin, music } from "../assets";
 
 const Stats = () => {
-  const taskDate = [
-    {
-      title: "first",
-      description: "...",
-      completed: false,
-    },
-    {
-      title: "second",
-      description: "...",
-      completed: false,
-    },
-    {
-      title: "third",
-      description: "...",
-      completed: false,
-    },
-  ];
-  const [tasks, setTasks] = useState(taskDate);
+  
+const titleRef = useRef(null)
+
+  const [tasks, setTasks] = useState([]);
 
   const handleDelete = (index) => {
     const newTasks = [...tasks];
@@ -54,15 +40,19 @@ const Stats = () => {
         <button onClick={newOne !== "" ? handleAdd : null}>ADD</button>
       </div>
 
-      <div className="text-white">
-        {tasks.map((task, index) => {
-          return (
-              <li 
-                className={task.completed ? "line-through" : 'm-2' }
+      {tasks.length === 0 ? (
+        <div className="text-white">Empty List</div>
+      ) : (
+        <div className="text-white">
+          {tasks.map((task, index) => {
+            return (
+              <li
+                className={task.completed ? "line-through" : "m-2"}
                 key={index}
               >
                 {task.title}
-                <button className="ml-4 bg-white text-black rounded-lg p-1"
+                <button
+                  className="ml-4 bg-white text-black rounded-lg p-1"
                   onClick={() => {
                     handleDelete(index);
                   }}
@@ -75,12 +65,13 @@ const Stats = () => {
                     handleMade(index);
                   }}
                 >
-                  {task.completed ? 'U' : 'M'}
+                  {task.completed ? "U" : "M"}
                 </button>
               </li>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
     </>
   );
 };
