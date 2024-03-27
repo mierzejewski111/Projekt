@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import { linkedin, music } from "../assets";
 
 const Stats = () => {
   const titleRef = useRef(null);
