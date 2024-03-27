@@ -41,7 +41,7 @@ const Stats = () => {
           value={newOne}
           onChange={(e) => setNewOne(e.target.value)}
         />
-        <button onClick={newOne !== "" ? handleAdd : null}>ADD</button>
+        <button onClick={newOne && handleAdd}>ADD</button>
         {tasks.length !== 0 ? (
           <button className="ml-3" onClick={handleDeleteALL}>
             X(all)
@@ -56,7 +56,7 @@ const Stats = () => {
           {tasks.map((task, index) => {
             return (
               <li
-                className={`m-2 ${task.completed ? "line-through" : "m-2"}`}
+                className={`m-2 ${task.completed && "line-through"}`}
                 key={index}
               >
                 {task.title}
