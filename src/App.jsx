@@ -13,7 +13,14 @@ import {
   Footer,
 } from "./components";
 
-const App = () => (
+const App = () => {
+  
+const person = {
+  name: 'adam',
+  tel: 111222333,
+}
+
+ return (
   <div className="bg-primary w-full overflow-hidden">
     <div className={`${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
@@ -30,7 +37,7 @@ const App = () => (
     <div className={` bg-primary ${styles.paddingX} ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
         <Stats />
-        <Business />
+        <Business name={person.name} tel={person.tel}/>
         <Billing />
         <CardDeal />
         <Testimonials />
@@ -40,6 +47,6 @@ const App = () => (
       </div>
     </div>
   </div>
-);
+)}
 
 export default App;

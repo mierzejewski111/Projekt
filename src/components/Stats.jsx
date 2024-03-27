@@ -56,7 +56,7 @@ const Stats = () => {
           {tasks.map((task, index) => {
             return (
               <li
-                className={task.completed ? "line-through" : "m-2"}
+                className={`m-2 ${task.completed ? "line-through" : "m-2"}`}
                 key={index}
               >
                 {task.title}
