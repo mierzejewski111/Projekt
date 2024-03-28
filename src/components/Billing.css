@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    /* background-image: linear-gradient(
+      to right bottom,
+      #e4a7db,
+      #d245db,
+      #a22dce,
+      #7d3ac5,
+      #4d56bd
+    );
+    min-height: 100vh; */
+  }
+  
+  .board {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+  }
+  
+  .field {
+    display: flex;
+    background-color: white;
+    flex-basis: 32%;
+    height: 32%;
+    align-items: center;
+    justify-content: center;
+    font-size: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .field:hover {
+    background-color: cadetblue;
+    cursor: pointer;
+  }
+  
+  .div {
+    position: absolute;
+    background-color: transparent;
+    width: 150px;
+    height: 300px;
+    top: 200px;
+    left: 20px;
+    z-index: -1;
+  }
+  .cover {
+    position: absolute;
+    background-color: transparent;
+    width: 150px;
+    height: 300px;
+    top: 200px;
+    left: 20px;
+    z-index: 1;
+  }
+  
+  .settings {
+    position: absolute;
+    height: 500px;
+    top: 50%;
+    left: calc(50% - 250px);
+    transform: translate(-110%, -50%);
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+  }
+  .reset {
+    flex-basis: 80%;
+    height: 50px;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .whoStart {
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .form1,
+  .form2 {
+    font-size: 30px;
+  }
+  .me,
+  .bot,
+  .x,
+  .o {
+    cursor: pointer;
+  }
+  .settings2 {
+    position: absolute;
+    height: 500px;
+    top: 50%;
+    left: calc(50% + 250px);
+    transform: translate(10%, -50%);
+    width: 200px;
+    display: flex;
+    flex-direction: rwo;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+  }
+  
+  .currentPlayer {
+    flex-basis: 80%;
+    font-size: 40px;
+    text-align: center;
+  }
+  .accept {
+    flex-basis: 80%;
+    height: 50px;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .decline {
+    flex-basis: 80%;
+    height: 50px;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .settings3 {
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    top: calc(50% - 350px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Start {
+    width: 200px;
+    height: 70px;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .winlosse {
+    font-size: 40px;
+  }
